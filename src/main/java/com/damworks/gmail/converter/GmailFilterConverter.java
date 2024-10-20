@@ -21,7 +21,10 @@ public class GmailFilterConverter {
         try {
             // Define paths for the XML input and CSV output
             String xmlFilePath = "data/mailFilters.xml";
-            String csvFilePath = "data/filters.csv";
+
+            // Get current date and time
+            String timestamp = getCurrentTimestamp();
+            String csvFilePath = "data/filters_" + timestamp + ".csv";
 
             // Perform XML to CSV conversion
             convertXmlToCsv(xmlFilePath, csvFilePath);
